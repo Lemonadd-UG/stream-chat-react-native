@@ -86,24 +86,6 @@ platform :ios do
       increment_version_number(version_number: package["version"])
       increment_build_number(xcodeproj: "SampleApp.xcodeproj")
 
-      gym(
-          workspace: "./SampleApp.xcworkspace",
-          scheme: "SampleApp",
-          export_method: "app-store",
-          export_options: "./fastlane/testflight_gym_export_options.plist",
-          silent: true,
-          clean: true,
-          xcargs: settings_to_override,
-          include_symbols: true,
-          output_directory: "./dist",
-      )
-
-      upload_to_testflight(
-          groups: ['Testers'],
-          changelog: "Lots of amazing new features to test out!",
-          reject_build_waiting_for_review: true
-      )
-
       commit_version_bump(
         message: "[fastlane][ios] Bump version [skip ci]",
         xcodeproj: "SampleApp.xcodeproj",
