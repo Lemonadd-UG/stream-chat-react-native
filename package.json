@@ -53,11 +53,6 @@
       "typescript"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "dotgit/hooks/pre-commit-format.sh && dotgit/hooks/pre-commit-reject-binaries.py"
-    }
-  },
   "dependencies": {
     "@babel/runtime": "7.12.13",
     "@gorhom/bottom-sheet": "3.0.0-alpha.0",

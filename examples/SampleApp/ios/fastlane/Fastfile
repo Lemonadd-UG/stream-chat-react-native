@@ -73,9 +73,9 @@ end
 platform :ios do
   desc "Deploy build to TestFlight QA"
   lane :deploy_to_testflight_qa do
-      app_store_connect_api_key()
+      # app_store_connect_api_key()
 
-      match_appstore
+      # match_appstore
 
       settings_to_override = {
         :BUNDLE_IDENTIFIER => "io.getstream.reactnative.SampleApp",
